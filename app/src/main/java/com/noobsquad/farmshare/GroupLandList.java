@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.noobsquad.farmshare.Models.LandListItem;
 import com.ramotion.foldingcell.FoldingCell;
@@ -25,6 +26,11 @@ public class GroupLandList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_land_list);
+
+        android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+
         lv = (ListView)findViewById(R.id.group_land_list);
 
         list = new ArrayList<>();

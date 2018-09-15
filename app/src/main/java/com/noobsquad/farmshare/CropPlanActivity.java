@@ -7,7 +7,6 @@ import android.app.FragmentTransaction;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,22 +24,22 @@ import java.util.ArrayList;
 
 public class CropPlanActivity extends Activity {
 
-    private static final String TAG = "CropPlanActivity";
+    /*private static final String TAG = "CropPlanActivity";
     ArrayList<CropPlan> arrayList = new ArrayList<>();
 
-    /**
+    *//**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
      * {@link FragmentPagerAdapter} derivative, which will keep every
      * loaded fragment in memory. If this becomes too memory intensive, it
      * may be best to switch to a
      * {@link android.support.v13.app.FragmentStatePagerAdapter}.
-     */
+     *//*
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
-    /**
+    *//**
      * The {@link ViewPager} that will host the section contents.
-     */
+     *//*
     private ViewPager mViewPager;
 
     @Override
@@ -94,23 +93,23 @@ public class CropPlanActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
+    *//**
      * A placeholder fragment containing a simple view.
-     */
+     *//*
     public static class PlaceholderFragment extends Fragment {
-        /**
+        *//**
          * The fragment argument representing the section number for this
          * fragment.
-         */
+         *//*
         private static final String ARG_SECTION_NUMBER = "section_number";
 
         public PlaceholderFragment() {
         }
 
-        /**
+        *//**
          * Returns a new instance of this fragment for the given section
          * number.
-         */
+         *//*
         public static PlaceholderFragment newInstance(int sectionNumber) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
@@ -129,10 +128,10 @@ public class CropPlanActivity extends Activity {
         }
     }
 
-    /**
+    *//**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
-     */
+     *//*
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -158,5 +157,5 @@ public class CropPlanActivity extends Activity {
                 return arrayList.get(position).getCrop();
             return null;
         }
-    }
+    }*/
 }

@@ -11,9 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         folding-cell:animationDuration="1000"
-        folding-cell:backSideColor="#FFFFFF"
-        folding-cell:additionalFlipsCount="2"
-        folding-cell:cameraHeight="30">
+        android:layout_margin="5dp"
+        folding-cell:backSideColor="#AAAAAA"
+        folding-cell:additionalFlipsCount="1"
+        folding-cell:cameraHeight="90">
         ​
         <LinearLayout
             android:id="@+id/cell_content_view"
