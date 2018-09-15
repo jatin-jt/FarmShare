@@ -31,6 +31,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".GroupDetailsActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".CropPlanActivity"
+            android:label="@string/title_activity_crop_plan"></activity>
+        <activity android:name=".GroupLandList"></activity>
     </application>
-
 </manifest>
