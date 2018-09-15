@@ -9,6 +9,13 @@ public class CropPlan {
     ArrayList<String> steps;
     Integer progress;
 
+    public CropPlan(Integer cropPlanId, String crop, ArrayList<String> steps, Integer progress) {
+        this.cropPlanId = cropPlanId;
+        this.crop = crop;
+        this.steps = steps;
+        this.progress = progress;
+    }
+
     public Integer getCropPlanId() {
         return cropPlanId;
     }
