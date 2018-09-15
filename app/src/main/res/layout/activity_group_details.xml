@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GroupDetailsActivity">
+
+    <TextView
+        android:id="@+id/tv_landslist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="LANDS LIST"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:background="#cccc00"/>
+
+    <TextView
+        android:id="@+id/tv_investements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="INVESTMENTS"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:background="#996633"/>
+
+    <TextView
+        android:id="@+id/tv_expenses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="EXPENSES"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:background="#663300"/>
+
+    <TextView
+        android:id="@+id/tv_cropplans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="CROP PLANS"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:background="#cc9900"/>
+
+
+</LinearLayout>
