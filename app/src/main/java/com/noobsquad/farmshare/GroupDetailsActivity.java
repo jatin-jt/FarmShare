@@ -2,6 +2,7 @@ package com.noobsquad.farmshare;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
 import android.widget.TextView;
 
 public class GroupDetailsActivity extends AppCompatActivity {
@@ -10,8 +11,10 @@ public class GroupDetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_details);
+
 
         tvLandslist = findViewById(R.id.tv_landslist);
         tvCropPlans = findViewById(R.id.tv_cropplans);

@@ -5,19 +5,23 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.animation.AccelerateInterpolator;
-import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.mobile.client.AWSMobileClient;
+import com.amazonaws.mobile.client.AWSStartupHandler;
+import com.amazonaws.mobile.client.AWSStartupResult;
 import com.noobsquad.farmshare.testfiles.ContentFragment;
 
 import java.util.ArrayList;
@@ -29,8 +33,6 @@ import yalantis.com.sidemenu.model.SlideMenuItem;
 import yalantis.com.sidemenu.util.ViewAnimator;
 
 public class StartActivity extends AppCompatActivity implements ViewAnimator.ViewAnimatorListener {
-
-    Button btnMarkLand;
 
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
@@ -44,15 +46,22 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        btnMarkLand = findViewById(R.id.btn_mark_land);
-        btnMarkLand.setOnClickListener((View v)->{startActivity(new Intent(this,MapsActivity.class));});
+        AWSMobileClient.getInstance().initialize(this, new AWSStartupHandler() {
+            @Override
+            public void onComplete(AWSStartupResult awsStartupResult) {
+                Log.d("YourMainActivity", "AWSMobileClient is instantiated and you are connected to AWS!");
+            }
+        }).execute();
+        AWSCredentialsProvider credentialsProvider = AWSMobileClient.getInstance().getCredentialsProvider();
 
         contentFragment = ContentFragment.newInstance(R.drawable.ic_launcher_background);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content_frame, contentFragment)
                 .commit();
+
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerLayout.setScrimColor(Color.TRANSPARENT);
+
         linearLayout = (LinearLayout) findViewById(R.id.left_drawer);
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,17 +74,18 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
         setActionBar();
         createMenuList();
         viewAnimator = new ViewAnimator<>(this, list, contentFragment, drawerLayout, this);
-
+        Intent intent = new Intent(this,GroupLandList.class);
+        //startActivity(intent);
     }
 
     private void createMenuList() {
-        SlideMenuItem menuItem0 = new SlideMenuItem(ContentFragment.CLOSE, R.drawable.ic_launcher_background);
+        SlideMenuItem menuItem0 = new SlideMenuItem(ContentFragment.CLOSE, R.drawable.ic_close_black_24dp);
         list.add(menuItem0);
-        SlideMenuItem menuItem = new SlideMenuItem(ContentFragment.BUILDING, R.drawable.ic_launcher_foreground);
+        SlideMenuItem menuItem = new SlideMenuItem("Flipper", R.drawable.ic_launcher_foreground);
         list.add(menuItem);
-        SlideMenuItem menuItem2 = new SlideMenuItem(ContentFragment.BUILDING, R.drawable.ic_launcher_foreground);
+        SlideMenuItem menuItem2 = new SlideMenuItem("GroupDetails", R.drawable.ic_group_black_24dp);
         list.add(menuItem2);
-        SlideMenuItem menuItem3 = new SlideMenuItem(ContentFragment.BUILDING, R.drawable.ic_launcher_foreground);
+        SlideMenuItem menuItem3 = new SlideMenuItem("MarkLand", R.drawable.ic_land_black_24dp);
         list.add(menuItem3);
         SlideMenuItem menuItem4 = new SlideMenuItem(ContentFragment.BUILDING, R.drawable.ic_launcher_foreground);
         list.add(menuItem4);
@@ -90,9 +100,8 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
 
     private void setActionBar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setHomeButtonEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         drawerToggle = new ActionBarDrawerToggle(
                 this,                  /* host Activity */
                 drawerLayout,         /* DrawerLayout object */
@@ -111,7 +120,7 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
                 super.onDrawerSlide(drawerView, slideOffset);
-                if (slideOffset > 0.99 && linearLayout.getChildCount() == 0)
+                if (slideOffset > 0.6 && linearLayout.getChildCount() == 0)
                     viewAnimator.showMenuContent();
             }
 
@@ -144,18 +153,21 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (drawerToggle.onOptionsItemSelected(item)) {
+        return true;
+        /*if (drawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
         switch (item.getItemId()) {
-            case R.drawable.ic_launcher_background:
+            case R.drawable.ic_launcher_foreground:
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-        }
+        }*/
     }
 
     private ScreenShotable replaceFragment(ScreenShotable screenShotable, int topPosition) {
+        Log.d("test",Integer.toString(topPosition));
+
         this.res = this.res == R.drawable.ic_launcher_background ? R.drawable.ic_launcher_foreground : R.drawable.ic_launcher_background;
         View view = findViewById(R.id.content_frame);
         int finalRadius = Math.max(view.getWidth(), view.getHeight());
@@ -172,8 +184,21 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
 
     @Override
     public ScreenShotable onSwitch(Resourceble slideMenuItem, ScreenShotable screenShotable, int position) {
+        Log.d("test","here");
         switch (slideMenuItem.getName()) {
             case ContentFragment.CLOSE:
+                return screenShotable;
+            case "Flipper":
+                Intent intent = new Intent(this,GroupLandList.class);
+                startActivity(intent);
+                return screenShotable;
+            case "GroupDetails":
+                Intent intent2 = new Intent(this,GroupDetailsActivity.class);
+                startActivity(intent2);
+                return screenShotable;
+            case "MarkLand":
+                Intent intent3 = new Intent(this,MapsActivity.class);
+                startActivity(intent3);
                 return screenShotable;
             default:
                 return replaceFragment(screenShotable, position);
@@ -182,13 +207,13 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
 
     @Override
     public void disableHomeButton() {
-        getSupportActionBar().setHomeButtonEnabled(false);
+        //getSupportActionBar().setHomeButtonEnabled(false);
 
     }
 
     @Override
     public void enableHomeButton() {
-        getSupportActionBar().setHomeButtonEnabled(true);
+        //().setHomeButtonEnabled(true);
         drawerLayout.closeDrawers();
 
     }
