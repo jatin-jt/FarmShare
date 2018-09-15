@@ -10,6 +10,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -65,7 +66,8 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
         setActionBar();
         createMenuList();
         viewAnimator = new ViewAnimator<>(this, list, contentFragment, drawerLayout, this);
-
+        Intent intent = new Intent(this,GroupLandList.class);
+        startActivity(intent);
     }
 
     private void createMenuList() {
@@ -156,6 +158,8 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
     }
 
     private ScreenShotable replaceFragment(ScreenShotable screenShotable, int topPosition) {
+        Log.d("test",Integer.toString(topPosition));
+
         this.res = this.res == R.drawable.ic_launcher_background ? R.drawable.ic_launcher_foreground : R.drawable.ic_launcher_background;
         View view = findViewById(R.id.content_frame);
         int finalRadius = Math.max(view.getWidth(), view.getHeight());

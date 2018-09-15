@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ramotion.foldingcell.FoldingCell
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/folding_cell"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    ​
+    <LinearLayout
+        android:id="@+id/cell_content_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/flipping_card_expand"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/land_owner_unfolded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bat Man"
+            android:textStyle="bold"
+            android:padding="15dp"
+            android:textSize="25sp"
+            android:background="@android:color/holo_blue_dark" />
+        <TextView
+            android:id="@+id/land_id_unfolded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Land ID: 9878"
+            android:paddingRight="15dp"
+            android:paddingLeft="20dp"
+            android:paddingBottom="10dp"
+            android:textSize="15sp"
+            android:background="@android:color/holo_blue_dark" />
+        <TextView
+            android:id="@+id/land_date_added"
+            android:text="23 Aug 2018"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/land_area"
+            android:text="56 sq m"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    ​
+    <LinearLayout
+        android:id="@+id/cell_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/land_owner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bat Man"
+            android:textStyle="bold"
+            android:padding="15dp"
+            android:textSize="25sp"
+            android:background="@android:color/holo_blue_dark" />
+        <TextView
+            android:id="@+id/land_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Land ID: 9878"
+            android:paddingRight="15dp"
+            android:paddingLeft="20dp"
+            android:paddingBottom="10dp"
+            android:textSize="15sp"
+            android:background="@android:color/holo_blue_dark" />
+
+    </LinearLayout>
+    ​
+</com.ramotion.foldingcell.FoldingCell>
