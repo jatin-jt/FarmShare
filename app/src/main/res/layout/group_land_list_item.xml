@@ -10,11 +10,11 @@
         android:id="@+id/folding_cell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        folding-cell:animationDuration="1000"
+        folding-cell:animationDuration="600"
         android:layout_margin="5dp"
         folding-cell:backSideColor="#AAAAAA"
-        folding-cell:additionalFlipsCount="1"
-        folding-cell:cameraHeight="90">
+        folding-cell:additionalFlipsCount="2"
+        folding-cell:cameraHeight="30">
         ​
         <LinearLayout
             android:id="@+id/cell_content_view"
@@ -31,7 +31,8 @@
                 android:textStyle="bold"
                 android:padding="15dp"
                 android:textSize="25sp"
-                android:background="@android:color/holo_blue_dark" />
+                android:textColor="#000000"
+                android:background="#aafb8c00" />
             <TextView
                 android:id="@+id/land_id_unfolded"
                 android:layout_width="match_parent"
@@ -41,12 +42,14 @@
                 android:paddingLeft="20dp"
                 android:paddingBottom="10dp"
                 android:textSize="15sp"
-                android:background="@android:color/holo_blue_dark" />
+                android:textColor="#000000"
+                android:background="#aafb8c00" />
             <TextView
                 android:id="@+id/land_date_added"
                 android:text="Added: 23 Aug 2018"
                 android:padding="15dp"
                 android:textSize="15sp"
+                android:textColor="#000000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
@@ -54,6 +57,7 @@
                 android:text="Area: 56 sq m"
                 android:padding="15dp"
                 android:textSize="15sp"
+                android:textColor="#000000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
@@ -62,15 +66,30 @@
                 android:padding="15dp"
                 android:textSize="15sp"
                 android:linksClickable="true"
+                android:textColor="#000000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_delete_black_24dp"
+                android:background="#ffffffff"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"/>
         </LinearLayout>
         ​
         <LinearLayout
             android:id="@+id/cell_title_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#26a69a">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="4dp"
+                android:background="#37474f">
             <TextView
                 android:id="@+id/land_owner"
                 android:layout_width="match_parent"
@@ -78,18 +97,19 @@
                 android:text="Bat Man"
                 android:textStyle="bold"
                 android:padding="15dp"
-                android:textSize="25sp"
-                android:background="@android:color/holo_blue_dark" />
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
             <TextView
                 android:id="@+id/land_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Land ID: 9878"
                 android:paddingRight="15dp"
+                android:textColor="#ffffff"
                 android:paddingLeft="20dp"
                 android:paddingBottom="10dp"
-                android:textSize="15sp"
-                android:background="@android:color/holo_blue_dark" />
+                android:textSize="15sp" />
+            </LinearLayout>
 
         </LinearLayout>
         ​
