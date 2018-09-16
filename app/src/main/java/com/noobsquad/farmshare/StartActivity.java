@@ -23,6 +23,7 @@ import com.amazonaws.mobile.auth.core.IdentityManager;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.client.AWSStartupHandler;
 import com.amazonaws.mobile.client.AWSStartupResult;
+import com.noobsquad.farmshare.Models.CropPlan;
 import com.noobsquad.farmshare.testfiles.ContentFragment;
 
 import java.util.ArrayList;
@@ -78,6 +79,7 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
         viewAnimator = new ViewAnimator<>(this, list, contentFragment, drawerLayout, this);
         Intent intent = new Intent(this,GroupLandList.class);
         //startActivity(intent);
+
     }
 
     private void createMenuList() {
@@ -91,12 +93,13 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
         list.add(menuItem3);
         SlideMenuItem menuItem4 = new SlideMenuItem("News", R.drawable.ic_launcher_foreground);
         list.add(menuItem4);
-        SlideMenuItem menuItem5 = new SlideMenuItem("SignOut", R.drawable.ic_launcher_foreground);
+        SlideMenuItem menuItem5 = new SlideMenuItem("CropPlan", R.drawable.ic_launcher_foreground);
         list.add(menuItem5);
-        SlideMenuItem menuItem6 = new SlideMenuItem(ContentFragment.BUILDING, R.drawable.ic_launcher_foreground);
+        SlideMenuItem menuItem6 = new SlideMenuItem("SignOut", R.drawable.ic_launcher_foreground);
         list.add(menuItem6);
         SlideMenuItem menuItem7 = new SlideMenuItem(ContentFragment.BUILDING, R.drawable.ic_launcher_foreground);
         list.add(menuItem7);
+
     }
 
 
@@ -209,6 +212,10 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
             case "News":
                 Intent intent4 = new Intent(this,NewsActivity.class);
                 startActivity(intent4);
+                return screenShotable;
+            case "CropPlan":
+                Intent intent5 = new Intent(this,CropPlanActivity.class);
+                startActivity(intent5);
                 return screenShotable;
             default:
                 return replaceFragment(screenShotable, position);

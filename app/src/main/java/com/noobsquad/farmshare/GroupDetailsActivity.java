@@ -17,6 +17,10 @@ public class GroupDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_details);
 
+        android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+
         tvLandsList = findViewById(R.id.tv_landslist);
         tvCropPlans = findViewById(R.id.tv_cropplans);
         tvExpenses = findViewById(R.id.tv_expenses);
