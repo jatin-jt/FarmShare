@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="flipping_card_expand">#FFFFFF</color>
+    <color name="mygreen">#26a69a</color>
+    <color name="myblack">#37474f</color>
 </resources>

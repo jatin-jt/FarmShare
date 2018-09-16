@@ -32,23 +32,25 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
+        <ImageView
             android:id="@+id/tv_landslist"
             style="@style/AppTheme.RoundedCornerMaterialButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:background="@drawable/rounded_shape"
+            android:background="@drawable/rounded2"
             android:fontFamily="sans-serif"
             android:gravity="center"
             android:text="LANDS LIST"
+            android:padding="10dp"
             android:textAlignment="center"
             android:textColor="#ffffff"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:src="@drawable/land_list_white"/>
 
-        <TextView
+        <ImageView
             android:id="@+id/tv_investements"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -57,11 +59,13 @@
             android:background="@drawable/rounded2"
             android:fontFamily="sans-serif"
             android:gravity="center"
+            android:padding="10dp"
             android:text="INVESTMENTS"
             android:textAlignment="center"
             android:textColor="#ffffff"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:src="@drawable/investments_white"/>
     </LinearLayout>
 
     <LinearLayout
@@ -70,35 +74,39 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <TextView
+        <ImageView
             android:id="@+id/tv_expenses"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:background="@drawable/rounded3"
+            android:padding="10dp"
+            android:background="@drawable/rounded2"
             android:fontFamily="sans-serif"
             android:gravity="center"
             android:text="EXPENSES"
             android:textAlignment="center"
             android:textColor="#ffffff"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:src="@drawable/expenses_white"/>
 
-        <TextView
+        <ImageView
             android:id="@+id/tv_cropplans"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="10dp"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:background="@drawable/rounded4"
+            android:background="@drawable/rounded2"
             android:fontFamily="monospace"
             android:gravity="center"
             android:text="CROP PLANS"
             android:textAlignment="center"
             android:textColor="#ffffff"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:src="@drawable/crop_plans_white"/>
     </LinearLayout>
 
     </LinearLayout>
