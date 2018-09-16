@@ -6,9 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".ProgressActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#EEEEEE">
+        <ImageView
+            android:id="@+id/tv_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/progress" />
+    </android.support.v7.widget.Toolbar>
+
     <TextView
         android:id="@+id/tv_crop"
         android:text="Wheat"
+        android:layout_below="@id/toolbar"
         android:textSize="30sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -21,11 +36,14 @@
     </ListView>
 
     <Button
-        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:text="Cultivated?"
+        android:background="@drawable/rounded3"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/mywhite"
         android:id="@+id/btn_addprogress"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content" />
 
 </RelativeLayout>

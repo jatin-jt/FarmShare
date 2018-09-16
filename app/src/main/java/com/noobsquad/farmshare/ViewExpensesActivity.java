@@ -22,6 +22,10 @@ public class ViewExpensesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_expenses);
 
+        android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+
         lvExpenses = findViewById(R.id.lv_expenses);
         ArrayList<Expense> arrayList = new ArrayList<>();
         arrayList.add(new Expense("Fertilizers", "20th August, 2018", 4000.10));
@@ -77,7 +81,7 @@ public class ViewExpensesActivity extends AppCompatActivity {
                 holder = (Holder) convertView.getTag();
             }
 
-            holder.tvExpense.setText(arrayList.get(position).getExpense().toString());
+            holder.tvExpense.setText("₹ " + arrayList.get(position).getExpense().toString());
             holder.tvExpenseDate.setText(arrayList.get(position).getExpenseDate());
             holder.tvExpenseName.setText(arrayList.get(position).getExpenseName());
 

@@ -6,4 +6,7 @@
     <color name="flipping_card_expand">#FFFFFF</color>
     <color name="mygreen">#26a69a</color>
     <color name="myblack">#37474f</color>
+    <color name="myred">#d50000</color>
+    <color name="moneygreen">#00c853</color>
+    <color name="mywhite">#ffffff</color>
 </resources>
