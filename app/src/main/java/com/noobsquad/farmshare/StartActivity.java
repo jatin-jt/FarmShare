@@ -97,7 +97,7 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
         list.add(menuItem5);
         SlideMenuItem menuItem6 = new SlideMenuItem("SignOut", R.drawable.ic_launcher_foreground);
         list.add(menuItem6);
-        SlideMenuItem menuItem7 = new SlideMenuItem(ContentFragment.BUILDING, R.drawable.ic_launcher_foreground);
+        SlideMenuItem menuItem7 = new SlideMenuItem("Progress", R.drawable.ic_launcher_foreground);
         list.add(menuItem7);
 
     }
@@ -216,6 +216,10 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
             case "CropPlan":
                 Intent intent5 = new Intent(this,CropPlanActivity.class);
                 startActivity(intent5);
+                return screenShotable;
+            case "Progress":
+                Intent intent6 = new Intent(this,ProgressActivity.class);
+                startActivity(intent6);
                 return screenShotable;
             default:
                 return replaceFragment(screenShotable, position);
