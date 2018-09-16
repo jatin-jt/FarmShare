@@ -15,6 +15,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".StartActivity"/>
         <activity android:name=".MapsActivity" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBDd5xNuwK3pUfbHdvQiamPpz3krcAzorQ" />
@@ -31,8 +32,14 @@
         </activity>
         <activity android:name=".GroupDetailsActivity" />
         <activity android:name=".HomeActivity" />
+        <activity
+            android:name=".CropPlanActivity"
+            android:label="@string/title_activity_crop_plan" />
+        <activity android:name=".ViewInvestmentActivity" />
+        <activity android:name=".ViewExpensesActivity"></activity>
         <activity android:name=".CropPlanActivity"
             android:label="@string/title_activity_crop_plan"></activity>
         <activity android:name=".GroupLandList"></activity>
     </application>
+
 </manifest>
