@@ -30,5 +30,6 @@ public class GroupDetailsActivity extends AppCompatActivity {
         tvLandsList.setOnClickListener((View v)->startActivity(new Intent(this,GroupLandList.class)));
         tvExpenses.setOnClickListener((View v)->startActivity(new Intent(this,ViewExpensesActivity.class)));
         tvInvestments.setOnClickListener((View v)->startActivity(new Intent(this,ViewInvestmentActivity.class)));
+        tvCropPlans.setOnClickListener((View v)->startActivity(new Intent(this, CropPlanActivity.class)));
     }
 }
