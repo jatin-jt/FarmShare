@@ -5,11 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class GroupDetailsActivity extends AppCompatActivity {
 
-    TextView tvLandsList, tvInvestments, tvExpenses, tvCropPlans;
+    ImageView tvLandsList, tvInvestments, tvExpenses, tvCropPlans;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

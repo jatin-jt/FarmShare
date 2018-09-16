@@ -3,7 +3,6 @@ package com.noobsquad.farmshare;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -20,9 +18,6 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
-
-import java.util.ArrayList;
 
 public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallback{
 
@@ -31,8 +26,6 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
     Button btnMark;
     GoogleMap map;
     Polygon p,p1;
-    Handler handler = new Handler();
-    DynamoDBMapper dynamoDBMapper;
     TextView tvArea;
 
     @SuppressLint("MissingPermission")
@@ -58,12 +51,12 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         map = googleMap;
-        CameraPosition cameraPosition = new CameraPosition.Builder().target(new LatLng(lat,lng)).zoom(18).build();
+        CameraPosition cameraPosition = new CameraPosition.Builder().target(new LatLng(100,100)).zoom(12).build();
         map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         //map.addMarker(new MarkerOptions().position(new LatLng(1,1)));
 
         PolygonOptions po = new PolygonOptions().add(new LatLng(1,1)).add(new LatLng(1,100)).add(new LatLng(100,100)).add(new LatLng(100,1));
-        po.fillColor(Color.argb(55,56,123,186));
+        po.fillColor(Color.argb(55,21,93,243));
         po.strokeColor(Color.argb(255,56,123,186));
         p = map.addPolygon(po);
         PolygonOptions po1 = new PolygonOptions().add(new LatLng(1,1)).add(new LatLng(1,50)).add(new LatLng(50,50)).add(new LatLng(50,1));
