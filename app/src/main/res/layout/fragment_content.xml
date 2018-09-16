@@ -82,7 +82,7 @@
                 android:gravity="center"
                 android:background="@drawable/rounded2">
 
-                <com.facebook.shimmer.ShimmerFrameLayout
+                <com.facebook.shimmer.ShimmerFrameLayout 
                     android:id="@+id/shimmer_view_container2"
                     android:layout_width="wrap_content"
                     app:shimmer_duration="2000"
