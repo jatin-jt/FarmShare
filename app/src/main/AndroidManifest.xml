@@ -37,11 +37,10 @@
             android:label="@string/title_activity_crop_plan" />
         <activity android:name=".ViewInvestmentActivity" />
         <activity android:name=".ViewExpensesActivity" />
-        <activity
-            android:name=".CropPlanActivity"
-            android:label="@string/title_activity_crop_plan" />
         <activity android:name=".GroupLandList" />
-        <activity android:name=".NewsActivity"></activity>
+        <activity android:name=".NewsActivity" />
+        <activity android:name=".ProgressActivity" />
+        <activity android:name=".DistributionActivity"></activity>
     </application>
 
 </manifest>
