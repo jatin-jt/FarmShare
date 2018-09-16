@@ -4,13 +4,15 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:padding="16dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded3">
 
     <TextView
         android:layout_weight="20"
         android:textSize="20sp"
         android:id="@+id/tv_landowner"
         android:text="Land Owner"
+        android:textColor="#ffffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -19,7 +21,8 @@
         android:textSize="30sp"
         android:layout_weight="1"
         android:id="@+id/tv_owner_investement"
-        android:text="200"
+        android:textColor="@color/moneygreen"
+        android:text="₹ 200"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
