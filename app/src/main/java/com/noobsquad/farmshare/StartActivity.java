@@ -85,20 +85,20 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
     private void createMenuList() {
         SlideMenuItem menuItem0 = new SlideMenuItem(ContentFragment.CLOSE, R.drawable.ic_close_black_24dp);
         list.add(menuItem0);
-        SlideMenuItem menuItem = new SlideMenuItem("Flipper", R.drawable.ic_launcher_foreground);
-        list.add(menuItem);
+//        SlideMenuItem menuItem = new SlideMenuItem("Flipper", R.drawable.ic_launcher_foreground);
+//        list.add(menuItem);
         SlideMenuItem menuItem2 = new SlideMenuItem("GroupDetails", R.drawable.ic_group_black_24dp);
         list.add(menuItem2);
         SlideMenuItem menuItem3 = new SlideMenuItem("MarkLand", R.drawable.ic_land_black_24dp);
         list.add(menuItem3);
-        SlideMenuItem menuItem4 = new SlideMenuItem("News", R.drawable.ic_launcher_foreground);
+        SlideMenuItem menuItem4 = new SlideMenuItem("News", R.drawable.ic_view_list_black_24dp);
         list.add(menuItem4);
-        SlideMenuItem menuItem5 = new SlideMenuItem("CropPlan", R.drawable.ic_launcher_foreground);
+        SlideMenuItem menuItem5 = new SlideMenuItem("CropPlan", R.drawable.ic_grain_black_24dp);
         list.add(menuItem5);
-        SlideMenuItem menuItem6 = new SlideMenuItem("SignOut", R.drawable.ic_launcher_foreground);
-        list.add(menuItem6);
-        SlideMenuItem menuItem7 = new SlideMenuItem("Progress", R.drawable.ic_launcher_foreground);
+        SlideMenuItem menuItem7 = new SlideMenuItem("Progress", R.drawable.ic_done_black_24dp);
         list.add(menuItem7);
+        SlideMenuItem menuItem6 = new SlideMenuItem("SignOut", R.drawable.ic_power_settings_new_black_24dp);
+        list.add(menuItem6);
 
     }
 
@@ -193,10 +193,10 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
         switch (slideMenuItem.getName()) {
             case ContentFragment.CLOSE:
                 return screenShotable;
-            case "Flipper":
-                Intent intent = new Intent(this,GroupLandList.class);
-                startActivity(intent);
-                return screenShotable;
+//            case "Flipper":
+//                Intent intent = new Intent(this,GroupLandList.class);
+//                startActivity(intent);
+//                return screenShotable;
             case "GroupDetails":
                 Intent intent2 = new Intent(this,GroupDetailsActivity.class);
                 startActivity(intent2);
