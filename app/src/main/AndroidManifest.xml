@@ -41,7 +41,8 @@
             android:name=".CropPlanActivity"
             android:label="@string/title_activity_crop_plan" />
         <activity android:name=".GroupLandList" />
-        <activity android:name=".NewsActivity"></activity>
+        <activity android:name=".NewsActivity" />
+        <activity android:name=".MapsActivity2"></activity>
     </application>
 
 </manifest>

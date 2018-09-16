@@ -36,6 +36,7 @@ public class NewsActivity extends AppCompatActivity {
     private ArticleAdapter mAdapter;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private ProgressBar progressBar;
+    //http://vikaspedia.in/education/teachers-corner/agriculture-feed/RSS
     private String urlString = "https://www.indiafarmsblog.com/feed/";
 
     @Override
