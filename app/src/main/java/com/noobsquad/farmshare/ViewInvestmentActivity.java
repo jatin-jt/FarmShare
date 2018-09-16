@@ -22,6 +22,10 @@ public class ViewInvestmentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_investment);
 
+        android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+
         lvInvestements = findViewById(R.id.lv_investments);
         ArrayList<Investment> arrayList = new ArrayList<>();
         arrayList.add(new Investment("Aditya Gupta", 10000.0));
@@ -77,7 +81,7 @@ public class ViewInvestmentActivity extends AppCompatActivity {
             }
 
             holder.tvLandOwner.setText(arrayList.get(position).getLandOwner());
-            holder.tvOwnerInvestment.setText(arrayList.get(position).getOwnerInvestment().toString());
+            holder.tvOwnerInvestment.setText("₹ "+arrayList.get(position).getOwnerInvestment().toString());
 
             return convertView;
         }
