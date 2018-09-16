@@ -42,12 +42,12 @@ public class ProgressActivity extends AppCompatActivity {
         btnAddProgress = findViewById(R.id.btn_addprogress);
 
         ArrayList<String> arrayList = new ArrayList<>();
-        arrayList.add("1");
-        arrayList.add("2");
-        arrayList.add("3");
-        arrayList.add("4");
-        arrayList.add("5");
-        arrayList.add("6");
+        arrayList.add("1. Prepare the soil\nYou’ll need some good rich soil, so it’s best to dig in some compost.");
+        arrayList.add("2. Planting seeds over the soil\nyou need  85 g for every 10 square meters.");
+        arrayList.add("3. Watering\nMoisten the soil with a spray of water. Water until the top 2 inches of soil becomes evenly damp. ");
+        arrayList.add("4. Weeding\nPull weeds or hoe the area between your rows of wheat if you notice weeds emerging.");
+        arrayList.add("5. Harvesting\nWheat planted in the fall, known as winter wheat, matures during the late spring or early summer, depending on your climate.");
+        arrayList.add("6. Processing");
 
         //2nd parameter is the progress
         StepsAdapter stepsAdapter = new StepsAdapter(arrayList, 5);

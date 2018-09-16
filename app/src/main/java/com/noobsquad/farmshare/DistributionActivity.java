@@ -36,13 +36,7 @@ public class DistributionActivity extends AppCompatActivity {
         double profit = sharedPreferences.getFloat("revenue", 100);
 
         lvDistributions = findViewById(R.id.lv_distributions);
-        ArrayList<Investment> arrayList = new ArrayList<>();
-        arrayList.add(new Investment("Aditya Gupta", 20.0));
-        arrayList.add(new Investment("Jatin Gupta", 30.00));
-        arrayList.add(new Investment("Aanya Jindal", 10.00));
-        arrayList.add(new Investment("Sushant Jain", 5.00));
-        arrayList.add(new Investment("Vishal Wadhwa", 5.00));
-        arrayList.add(new Investment("Sanyam Garg", 30.00));
+
 
 
         ArrayList<LandListItem> list = new ArrayList<>();
@@ -58,8 +52,19 @@ public class DistributionActivity extends AppCompatActivity {
         arrayList1.add(new Expense("Seeds", "15th August, 2018", 20000.10));
         arrayList1.add(new Expense("Equipment", "25th August, 2018", 2000.10));
 
+        for (int i = 0; i < arrayList1.size(); i++) {
+            profit -= arrayList1.get(i).getExpense();
+        }
 
-        DistributionAdapter distributionAdapter = new DistributionAdapter(arrayList);
+        ArrayList<Investment> arrayList = new ArrayList<>();
+        arrayList.add(new Investment("Aditya Gupta", 10000.0));
+        arrayList.add(new Investment("Jatin Gupta", 9000.00));
+        arrayList.add(new Investment("Aanya Jindal", 12000.00));
+        arrayList.add(new Investment("Sushant Jain", 8000.00));
+        arrayList.add(new Investment("Vishal Wadhwa", 9000.00));
+        arrayList.add(new Investment("Sanyam Garg", 11000.00));
+        ArrayList<Investment> finList = getDistribution(arrayList, list, profit);
+        DistributionAdapter distributionAdapter = new DistributionAdapter(finList);
         lvDistributions.setAdapter(distributionAdapter);
     }
 
@@ -105,15 +110,15 @@ public class DistributionActivity extends AppCompatActivity {
             }
 
             holder.tvLandOwner.setText(arrayList.get(position).getLandOwner());
-            holder.tvOwnerDistributuon.setText(arrayList.get(position).getOwnerInvestment().toString()+"%");
+            holder.tvOwnerDistributuon.setText(String.format("%.2f", arrayList.get(position).getOwnerInvestment()));
 
             return convertView;
         }
     }
 
-    public List<Investment> getDistribution(List<Investment> investments, List<LandListItem> ownerships, Double profit)
+    public ArrayList<Investment> getDistribution(ArrayList<Investment> investments, ArrayList<LandListItem> ownerships, Double profit)
     {
-        List<Investment> list = new ArrayList<>();
+        ArrayList<Investment> list = new ArrayList<>();
         HashMap<String, Double> hashMap = new HashMap<>();
         for (int i = 0;i<investments.size();i++)
         {
