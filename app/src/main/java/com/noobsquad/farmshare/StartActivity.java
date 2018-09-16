@@ -89,14 +89,16 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
 //        list.add(menuItem);
         SlideMenuItem menuItem2 = new SlideMenuItem("GroupDetails", R.drawable.ic_group_black_24dp);
         list.add(menuItem2);
-        SlideMenuItem menuItem3 = new SlideMenuItem("MarkLand", R.drawable.ic_land_black_24dp);
-        list.add(menuItem3);
+        SlideMenuItem menuItem8 = new SlideMenuItem("Maps2", R.drawable.ic_map_black_24dp);
+        list.add(menuItem8);
         SlideMenuItem menuItem4 = new SlideMenuItem("News", R.drawable.ic_view_list_black_24dp);
         list.add(menuItem4);
         SlideMenuItem menuItem5 = new SlideMenuItem("CropPlan", R.drawable.ic_grain_black_24dp);
         list.add(menuItem5);
         SlideMenuItem menuItem7 = new SlideMenuItem("Progress", R.drawable.ic_done_black_24dp);
         list.add(menuItem7);
+        SlideMenuItem menuItem3 = new SlideMenuItem("MarkLand", R.drawable.ic_land_black_24dp);
+        list.add(menuItem3);
         SlideMenuItem menuItem6 = new SlideMenuItem("SignOut", R.drawable.ic_power_settings_new_black_24dp);
         list.add(menuItem6);
 
@@ -220,6 +222,10 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
             case "Progress":
                 Intent intent6 = new Intent(this,ProgressActivity.class);
                 startActivity(intent6);
+                return screenShotable;
+            case "Maps2":
+                Intent intent7 = new Intent(this,MapsActivity2.class);
+                startActivity(intent7);
                 return screenShotable;
             default:
                 return replaceFragment(screenShotable, position);
