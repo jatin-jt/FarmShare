@@ -10,8 +10,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.noobsquad.farmshare.Models.Investment;
+import com.noobsquad.farmshare.Models.Land;
+import com.noobsquad.farmshare.Models.LandListItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DistributionActivity extends AppCompatActivity {
 
@@ -33,6 +36,16 @@ public class DistributionActivity extends AppCompatActivity {
         arrayList.add(new Investment("Sushant Jain", 5.00));
         arrayList.add(new Investment("Vishal Wadhwa", 5.00));
         arrayList.add(new Investment("Sanyam Garg", 30.00));
+
+
+        ArrayList<LandListItem> list = new ArrayList<>();
+        list.add(new LandListItem(1,"Aditya Gupta", "15 Sep 2018", "+91955555532",100.44));
+        list.add(new LandListItem(2,"Jatin Gupta", "15 Sep 2018", "+919876543210",98.8));
+        list.add(new LandListItem(3,"Aanya Jindal", "15 Sep 2018", "+919123456789",208.8));
+        list.add(new LandListItem(4,"Sushant Jain", "15 Sep 2018", "+91955555532",150.8));
+        list.add(new LandListItem(5,"Vishal Wadhwa", "15 Sep 2018", "+91955555532",110.8));
+        list.add(new LandListItem(6,"Sanyam Garg", "15 Sep 2018", "+919953239367",5000.8));
+
 
         DistributionAdapter distributionAdapter = new DistributionAdapter(arrayList);
         lvDistributions.setAdapter(distributionAdapter);
@@ -84,5 +97,10 @@ public class DistributionActivity extends AppCompatActivity {
 
             return convertView;
         }
+    }
+
+    public List<Investment> getDistribution(List<Investment> investments, List<LandListItem> ownerships)
+    {
+        return null;
     }
 }
