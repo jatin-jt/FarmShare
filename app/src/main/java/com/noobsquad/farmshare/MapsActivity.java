@@ -106,7 +106,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             vertices.add(new LatLng(lat,lng));
             p.setPoints(vertices);
             Log.d(TAG,  vertices.toString());
-            handler.postDelayed(tracker,100);
+            handler.postDelayed(tracker,40);
         }
     };
 
@@ -114,7 +114,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     {
         if(!started) {
             Log.d(TAG, "startLogging: haha");
-            handler.postDelayed(tracker,1000);
+            handler.postDelayed(tracker,40);
             btnMark.setText("Stop");
             started = true;
         } else {
