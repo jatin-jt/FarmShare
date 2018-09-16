@@ -1,8 +1,11 @@
 package com.noobsquad.farmshare;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -52,10 +56,18 @@ public class ProgressActivity extends AppCompatActivity {
                 Log.d(TAG, "onClick: ");
                 AlertDialog.Builder builder = new AlertDialog.Builder(ProgressActivity.this);
                 LayoutInflater li = LayoutInflater.from(ProgressActivity.this);
-                builder.setView(li.inflate(R.layout.dialog_progress, null))
+                View vw = li.inflate(R.layout.dialog_progress,null);
+                builder.setView(vw)
                         .setPositiveButton("ADD", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                                SharedPreferences.Editor editor = sharedPref.edit();
+                                editor.putInt("sapling_level", 6);
+                                EditText et = vw.findViewById(R.id.et_progress);
+                                editor.putFloat("revenue",Float.parseFloat(et.getText().toString()));
+                                editor.commit();
+                                Log.d(TAG, "onClick: "+ sharedPref.getInt("sapling_level",5));
                                 startActivity(new Intent(ProgressActivity.this, DistributionActivity.class));
                             }
                         })

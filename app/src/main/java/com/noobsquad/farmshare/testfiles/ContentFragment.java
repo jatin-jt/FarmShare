@@ -1,10 +1,14 @@
 package com.noobsquad.farmshare.testfiles;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +31,7 @@ public class ContentFragment extends Fragment implements ScreenShotable {
     public static final String PARTY = "Party";
     public static final String MOVIE = "Movie";
 
+    private static final String TAG = "ContentFragment";
     private View containerView;
     protected ImageView mImageView;
     protected int res;
@@ -57,7 +62,15 @@ public class ContentFragment extends Fragment implements ScreenShotable {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_content, container, false);
-
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        int saplingLevel = sharedPref.getInt("sapling_level",5);
+        mImageView = rootView.findViewById(R.id.iv_progress);
+        Log.d(TAG, "onCreateView: "+saplingLevel);
+        if(saplingLevel == 5) {
+            mImageView.setImageResource(R.drawable.ic_sapling4);
+        } else {
+            mImageView.setImageResource(R.drawable.ic_sapling6);
+        }
         return rootView;
     }
 
