@@ -39,8 +39,9 @@
         <activity android:name=".ViewExpensesActivity" />
         <activity android:name=".GroupLandList" />
         <activity android:name=".NewsActivity" />
+        <activity android:name=".MapsActivity2"/>
         <activity android:name=".ProgressActivity" />
-        <activity android:name=".DistributionActivity"></activity>
+        <activity android:name=".DistributionActivity"/>
     </application>
 
 </manifest>
