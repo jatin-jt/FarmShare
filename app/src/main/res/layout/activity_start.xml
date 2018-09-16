@@ -11,8 +11,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/home">
+        android:layout_height="match_parent">
 
         <FrameLayout
             android:id="@+id/tool_frame"
@@ -32,8 +31,7 @@
             android:id="@+id/conteiner_frame"
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/home">
+            android:layout_height="match_parent">
             <LinearLayout
                 android:id="@+id/content_overlay"
                 android:layout_width="match_parent"

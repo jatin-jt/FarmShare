@@ -24,11 +24,10 @@ public class ViewExpensesActivity extends AppCompatActivity {
 
         lvExpenses = findViewById(R.id.lv_expenses);
         ArrayList<Expense> arrayList = new ArrayList<>();
-        Expense expense = new Expense("Bought fertilizers", "15th September, 2018", 400.10);
-        arrayList.add(expense);
-        arrayList.add(expense);
-        arrayList.add(expense);
-        arrayList.add(expense);
+        arrayList.add(new Expense("Fertilizers", "20th August, 2018", 4000.10));
+        arrayList.add(new Expense("Pesticides", "20th August, 2018", 1500.10));
+        arrayList.add(new Expense("Seeds", "15th August, 2018", 20000.10));
+        arrayList.add(new Expense("Equipment", "25th August, 2018", 2000.10));
 
         ExpensesAdapter expensesAdapter = new ExpensesAdapter(arrayList);
         lvExpenses.setAdapter(expensesAdapter);

@@ -34,8 +34,12 @@ public class GroupLandList extends AppCompatActivity {
         lv = (ListView)findViewById(R.id.group_land_list);
 
         list = new ArrayList<>();
-        list.add(new LandListItem(8976,"Aditya Gupta", "23 Aug 2018", "+91955555532",45.44));
-        list.add(new LandListItem(8976,"sssssa Gupta", "23 Aug 2018", "+91955555532",99.8));
+        list.add(new LandListItem(1,"Aditya Gupta", "15 Sep 2018", "+91955555532",100.44));
+        list.add(new LandListItem(2,"Jatin Gupta", "15 Sep 2018", "+919876543210",98.8));
+        list.add(new LandListItem(3,"Aanya Jindal", "15 Sep 2018", "+919123456789",208.8));
+        list.add(new LandListItem(4,"Sushant Jain", "15 Sep 2018", "+91955555532",150.8));
+        list.add(new LandListItem(5,"Vishal Wadhwa", "15 Sep 2018", "+91955555532",110.8));
+        list.add(new LandListItem(6,"Sanyam Garg", "15 Sep 2018", "+919953239367",5000.8));
 
         lv.setAdapter(new GenericAdapter<LandListItem>(this, list) {
         @Override

@@ -24,9 +24,12 @@ public class ViewInvestmentActivity extends AppCompatActivity {
 
         lvInvestements = findViewById(R.id.lv_investments);
         ArrayList<Investment> arrayList = new ArrayList<>();
-        Investment investment = new Investment("Aanya", 4000.50);
-        for (int i=0;i<10;i++)
-            arrayList.add(investment);
+        arrayList.add(new Investment("Aditya Gupta", 10000.0));
+        arrayList.add(new Investment("Jatin Gupta", 9000.00));
+        arrayList.add(new Investment("Aanya Jindal", 12000.00));
+        arrayList.add(new Investment("Sushant Jain", 8000.00));
+        arrayList.add(new Investment("Vishal Wadhwa", 9000.00));
+        arrayList.add(new Investment("Sanyam Garg", 11000.00));
 
         InvestmentAdapater investmentAdapater = new InvestmentAdapater(arrayList);
         lvInvestements.setAdapter(investmentAdapater);

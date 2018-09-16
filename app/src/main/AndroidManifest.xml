@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".StartActivity"/>
+        <activity android:name=".StartActivity" />
         <activity android:name=".MapsActivity" />
 
         <meta-data
@@ -36,10 +36,12 @@
             android:name=".CropPlanActivity"
             android:label="@string/title_activity_crop_plan" />
         <activity android:name=".ViewInvestmentActivity" />
-        <activity android:name=".ViewExpensesActivity"></activity>
-        <activity android:name=".CropPlanActivity"
-            android:label="@string/title_activity_crop_plan"></activity>
-        <activity android:name=".GroupLandList"></activity>
+        <activity android:name=".ViewExpensesActivity" />
+        <activity
+            android:name=".CropPlanActivity"
+            android:label="@string/title_activity_crop_plan" />
+        <activity android:name=".GroupLandList" />
+        <activity android:name=".NewsActivity"></activity>
     </application>
 
 </manifest>

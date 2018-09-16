@@ -19,6 +19,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.widget.LinearLayout;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.mobile.auth.core.IdentityManager;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.client.AWSStartupHandler;
 import com.amazonaws.mobile.client.AWSStartupResult;
@@ -34,6 +35,7 @@ import yalantis.com.sidemenu.util.ViewAnimator;
 
 public class StartActivity extends AppCompatActivity implements ViewAnimator.ViewAnimatorListener {
 
+    private static final String TAG = "StartActivity";
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
     private List<SlideMenuItem> list = new ArrayList<>();
@@ -87,9 +89,9 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
         list.add(menuItem2);
         SlideMenuItem menuItem3 = new SlideMenuItem("MarkLand", R.drawable.ic_land_black_24dp);
         list.add(menuItem3);
-        SlideMenuItem menuItem4 = new SlideMenuItem(ContentFragment.BUILDING, R.drawable.ic_launcher_foreground);
+        SlideMenuItem menuItem4 = new SlideMenuItem("News", R.drawable.ic_launcher_foreground);
         list.add(menuItem4);
-        SlideMenuItem menuItem5 = new SlideMenuItem(ContentFragment.BUILDING, R.drawable.ic_launcher_foreground);
+        SlideMenuItem menuItem5 = new SlideMenuItem("SignOut", R.drawable.ic_launcher_foreground);
         list.add(menuItem5);
         SlideMenuItem menuItem6 = new SlideMenuItem(ContentFragment.BUILDING, R.drawable.ic_launcher_foreground);
         list.add(menuItem6);
@@ -199,6 +201,14 @@ public class StartActivity extends AppCompatActivity implements ViewAnimator.Vie
             case "MarkLand":
                 Intent intent3 = new Intent(this,MapsActivity.class);
                 startActivity(intent3);
+                return screenShotable;
+            case "SignOut":
+                Log.d(TAG, "onSwitch: sign out");
+                IdentityManager.getDefaultIdentityManager().signOut();
+                startActivity(new Intent(this, AuthActivity.class));
+            case "News":
+                Intent intent4 = new Intent(this,NewsActivity.class);
+                startActivity(intent4);
                 return screenShotable;
             default:
                 return replaceFragment(screenShotable, position);

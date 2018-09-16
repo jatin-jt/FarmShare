@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.mobile.client.AWSMobileClient;
@@ -24,16 +25,12 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolygonOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
-import com.noobsquad.farmshare.Models.LandMappings;
+import com.google.maps.android.SphericalUtil;
 
 import java.util.ArrayList;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,LocationListener {
 
@@ -48,6 +45,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Polyline p;
     Handler handler = new Handler();
     DynamoDBMapper dynamoDBMapper;
+    TextView tvArea;
+
     @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +54,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_maps);
         vertices = new ArrayList<>();
         btnMark = findViewById(R.id.btn_mark);
+        tvArea = findViewById(R.id.tv_area);
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -87,10 +87,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         map = googleMap;
-        CameraPosition cameraPosition = new CameraPosition.Builder().target(new LatLng(lat,lng)).zoom(17).build();
+        CameraPosition cameraPosition = new CameraPosition.Builder().target(new LatLng(lat,lng)).zoom(18).build();
         map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-        map.addMarker(new MarkerOptions().position(new LatLng(1,1)));
-        PolylineOptions po = new PolylineOptions().add(new LatLng(1,1)).add(new LatLng(50,50));
+        //map.addMarker(new MarkerOptions().position(new LatLng(1,1)));
+        PolylineOptions po = new PolylineOptions().add(new LatLng(1,1)).add(new LatLng(1.1,1.1));
         p = map.addPolyline(po);
         //p = map.addPolyline(new PolylineOptions().add(new LatLng(0.0,0.0)).add(new LatLng(100.0,100.0)));
         //p.setColor(Color.MAGENTA);
@@ -101,7 +101,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             vertices.add(new LatLng(lat,lng));
             p.setPoints(vertices);
             Log.d(TAG,  vertices.toString());
-            handler.postDelayed(tracker,1000);
+            handler.postDelayed(tracker,100);
         }
     };
 
@@ -117,10 +117,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             handler.removeCallbacks(tracker);
             PolygonOptions po = new PolygonOptions().addAll(vertices);
             map.addPolygon(po).setFillColor(Color.GREEN);
-            LandMappings landMappings = new LandMappings();
-            landMappings.setLandId("haha");
-            landMappings.setPolygonCoordinates(vertices);
-            dynamoDBMapper.save(landMappings);
+            double area = SphericalUtil.computeArea(vertices);
+            Log.d(TAG, "startLogging: "+ area);
+            tvArea.setText(String.valueOf(area));
+            //dynamoDBMapper.save(landMappings);
         }
     }
 
