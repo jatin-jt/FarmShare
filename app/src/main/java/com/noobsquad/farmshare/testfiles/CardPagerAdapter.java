@@ -73,9 +73,12 @@ public class CardPagerAdapter extends PagerAdapter implements CardAdapter {
     private void bind(CardItem item, View view) {
         TextView titleTextView = (TextView) view.findViewById(R.id.titleTextView);
         TextView contentTextView = (TextView) view.findViewById(R.id.contentTextView);
+        TextView timeTextView = view.findViewById(R.id.timeTextView);
+
         titleTextView.setText(item.getCrop());
         double v = Double.parseDouble(item.getPrice());
-        contentTextView.setText(String.format("%.2f", v));
+        contentTextView.setText("Rs." + String.format("%.2f", v) + "/acre");
+        timeTextView.setText("150-170 days");
     }
 
 }
