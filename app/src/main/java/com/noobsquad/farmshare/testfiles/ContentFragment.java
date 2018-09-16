@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.noobsquad.farmshare.R;
 
 import yalantis.com.sidemenu.interfaces.ScreenShotable;
@@ -57,7 +58,12 @@ public class ContentFragment extends Fragment implements ScreenShotable {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_content, container, false);
-
+        ShimmerFrameLayout container2 =
+                (ShimmerFrameLayout)rootView.findViewById(R.id.shimmer_view_container2);
+        container2.startShimmer();
+        ShimmerFrameLayout container1 =
+                (ShimmerFrameLayout)rootView.findViewById(R.id.shimmer_view_container1);
+        container1.startShimmer();
         return rootView;
     }
 

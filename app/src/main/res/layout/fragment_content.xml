@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEEEEE"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".testfiles.ContentFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -42,21 +42,32 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/rounded2">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="#ffffff"
-                    android:gravity="center"
-                    android:text="Days to Harvest"/>
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_view_container1"
+                    android:layout_width="wrap_content"
+                    app:shimmer_duration="2000"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#ffffff"
+                            android:gravity="center"
+                            android:text="Days to Harvest"/>
 
-                <TextView
-                    android:id="@+id/tv_daystoharvest"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="#ffffff"
-                    android:text="20"
-                    android:gravity="center"
-                    android:textSize="30sp"/>
+                        <TextView
+                            android:id="@+id/tv_daystoharvest"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#ffffff"
+                            android:text="20"
+                            android:gravity="center"
+                            android:textSize="30sp"/>
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
 
             </LinearLayout>
 
@@ -71,21 +82,32 @@
                 android:gravity="center"
                 android:background="@drawable/rounded2">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textColor="#ffffff"
-                    android:text="Expected Yield"/>
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_view_container2"
+                    android:layout_width="wrap_content"
+                    app:shimmer_duration="2000"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="Expected Yield"/>
 
-                <TextView
-                    android:id="@+id/tv_expectedyield"
-                    android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:textColor="#ffffff"
-                    android:layout_height="wrap_content"
-                    android:text="400"
-                    android:textSize="30sp"/>
+                        <TextView
+                            android:id="@+id/tv_expectedyield"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:textColor="#ffffff"
+                            android:layout_height="wrap_content"
+                            android:text="400"
+                            android:textSize="30sp"/>
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
 
             </LinearLayout>
 

@@ -21,6 +21,9 @@ public class DistributionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_distribution);
+        android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
 
         lvDistributions = findViewById(R.id.lv_distributions);
         ArrayList<Investment> arrayList = new ArrayList<>();
